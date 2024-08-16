@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocyray - Online Grocery Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        main {
+            padding: 1rem;
+        }
+        
+        .products {
+            margin-bottom: 2rem;
+        }
+        
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .product-item {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 calc(25% - 1rem);
+        }
+        
+        .product-item img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .product-item h3 {
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .cart {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 70px;
+        }
+        
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .cart ul li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Grocyray</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.hVjhVt5EiigNSJr1QK93AAHaIJ&pid=Api&P=0&h=220" alt="Apple">
+                    <h3>Apple</h3>
+                    <p>Price: $1.00 each</p>
+                    <button onclick="addToCart('Apple', 1.00)">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.Ae_k4JX25bScVh00mnmZ5gHaFu&pid=Api&P=0&h=220" alt="Banana">
+                    <h3>Banana</h3>
+                    <p>Price: $0.50 each</p>
+                    <button onclick="addToCart('Banana', 0.50)">Add to Cart</button>
+                </div>
+
+
+
+                <div class="product-item">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.51GC6H-QKiogoLJdxe7YXgHaIS&pid=Api&P=0&h=220" alt="Orange">
+                    <h3>Orange</h3>
+                    <p>Price: $0.80 each</p>
+                    <button onclick="addToCart('Orange', 0.80)">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.Iwpd-0C3ziKGXuYSTMATxgHaE6&pid=Api&P=0&h=220" alt="Broccoli">
+                    <h3>Broccoli</h3>
+                    <p>Price: $1.50 each</p>
+                    <button onclick="addToCart('Broccoli', 1.50)">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.hVjhVt5EiigNSJr1QK93AAHaIJ&pid=Api&P=0&h=220" alt="Apple">
+                    <h3>Apple</h3>
+                    <p>Price: $20.00 each</p>
+                    <button onclick="addToCart('Apple', 1.00)">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.PKHYlstDYAp3lswvX1o0aAHaE8&pid=Api&P=0&h=220" alt="Orange">
+                    <h3>Orange</h3>
+                    <p>Price: $0.80 each</p>
+                    <button onclick="addToCart('Orange', 0.80)">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.CZkr0J3LeRsMafEnZZGpcAHaFj&pid=Api&P=0&h=220" alt="Carrot">
+                    <h3>Carrot</h3>
+                    <p>Price: $0.60 each</p>
+                    <button onclick="addToCart('Carrot', 0.60)">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.ITbfAAvaxmOLCHmFn9_kiQHaE8&pid=Api&P=0&h=220" alt="Tomato">
+                    <h3>Tomato</h3>
+                    <p>Price: $0.70 each</p>
+                    <button onclick="addToCart('Tomato', 0.70)">Add to Cart</button>
+                </div>
+                <!-- Add more products as needed -->
+            </div>
+        </section>
+
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Grocyray. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(product, price) {
+            const cartItem = {
+                product,
+                price
+            };
+            cart.push(cartItem);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+
+            let totalPrice = 0;
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.product} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+                totalPrice += item.price;
+            });
+
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+
+        function checkout() {
+            if (cart.length > 0) {
+                alert('Thank you for your purchase!');
+                cart = [];
+                updateCart();
+            } else {
+                alert('Your cart is empty!');
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
